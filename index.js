@@ -1,13 +1,16 @@
 const board=document.querySelector(".board");
-const gridSize=16;
+const gridSize=1;
+let squareLen=board.offsetHeight/gridSize;
 function addColor(e){
-    console.log(e.target);
+    //console.log(e.target);
     e.target.style.backgroundColor="red";
 }
  for(let i=0;i<gridSize;i++){
     for(let j=0;j<gridSize;j++){
         const square=document.createElement("div");
-        square.style.cssText="height:10px; width:10px; " 
+        console.log(squareLen);
+        square.style.height=`${squareLen}px`;
+        square.style.width=`${squareLen}px`;
         square.addEventListener("mouseenter",addColor);
         board.appendChild(square);
     }

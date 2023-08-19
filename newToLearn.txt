@@ -1,0 +1,11 @@
+To get the height of element 
+        var clientHeight = document.getElementById('myDiv').clientHeight;
+        or
+
+        var offsetHeight = document.getElementById('myDiv').offsetHeight;
+        clientHeight includes padding.
+
+        offsetHeight includes padding, scrollBar and borders.
+
+
+
