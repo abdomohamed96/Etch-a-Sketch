@@ -1,7 +1,9 @@
 const board=document.querySelector(".board");
 const sizeButton=document.querySelector(".girdSize");
 const changeColor=document.querySelector(".changeColor")
+const rainbowColor=document.querySelector(".rainbowColor");
 const clear=document.querySelector(".clear");
+rainbowColor.addEventListener("click",rainbowMode)
 function clearBoard(){
     const allSquares=Array.from(document.querySelectorAll("#square"));
     console.log(allSquares);
@@ -10,12 +12,26 @@ function clearBoard(){
     })
 
 }
+let mode="not random";
+function rainbowMode(){
+    mode="random";
+    clearBoard();
+}
+function randomColor(){
+    const letters="0123456789ABCDEF";
+    let color='#';
+    for(let i=0;i<6;i++){
+        color+=letters[Math.floor(Math.random()*16)];
+    }
+    return color;
+}
+
 clear.addEventListener("click",clearBoard);
 changeColor.style.width="100px";
 let selectColor="red";
 changeColor.addEventListener("click",drawingColor);
 function drawingColor(e){
-    console.log(e.target);
+    mode="not random";
     selectColor=e.target.value;  
 }
 sizeButton.addEventListener("click",getSize);
@@ -30,6 +46,9 @@ function getSize(e){
 
 drawGrid();
 function addColor(e){
+    if(mode=="random")
+    e.target.style.backgroundColor=randomColor();
+    else
     e.target.style.backgroundColor=selectColor;
 }
 function drawGrid(){
