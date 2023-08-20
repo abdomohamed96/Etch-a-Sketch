@@ -47,3 +47,15 @@ a{
 .githubicon{
     background-color: white;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:10px;
+}
