@@ -19,7 +19,7 @@ function drawingColor(e){
     selectColor=e.target.value;  
 }
 sizeButton.addEventListener("click",getSize);
-let gridSize=20;
+let gridSize=16;
 let prevSize=16;
 function getSize(e){
     prevSize=gridSize;
@@ -39,7 +39,7 @@ function drawGrid(){
         square.style.height=`${board.offsetHeight/gridSize}px`;
         square.style.width=`${board.offsetHeight/gridSize}px`;
         square.setAttribute("class",`square${i*gridSize+j}`);
-        square.setAttribute("id","square")
+        square.setAttribute("id","square");
         square.addEventListener("mouseenter",addColor);
         board.appendChild(square);
     }
@@ -65,6 +65,7 @@ function reDraw(){
                square.style.height=`${squareLength}px`;
                square.style.width=`${squareLength}px`;
                square.setAttribute("class",`square${i*gridSize+j}`);
+               square.setAttribute("id","square");
                square.addEventListener("mouseenter",addColor);
                board.appendChild(square);
            }else{
