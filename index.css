@@ -59,3 +59,6 @@ a{
     justify-content: flex-start;
     gap:10px;
 }
+#square{
+    background-color: white;
+}
